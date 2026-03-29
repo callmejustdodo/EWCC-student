@@ -3,7 +3,8 @@ import { Geist_Mono, Roboto } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { AuthProvider } from "@/contexts/auth-context";
-import { Header } from "@/components/layout/header";
+import { CartProvider } from "@/contexts/cart-context";
+import { HeaderWithCart } from "@/components/layout/header-with-cart";
 import { Footer } from "@/components/layout/footer";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
@@ -34,12 +35,14 @@ export default function RootLayout({
       <body>
         <ThemeProvider>
           <AuthProvider>
+            <CartProvider>
             <div className="flex min-h-svh flex-col">
-              <Header />
+              <HeaderWithCart />
               <main className="flex-1">{children}</main>
               <Footer />
             </div>
             <Toaster />
+            </CartProvider>
           </AuthProvider>
         </ThemeProvider>
       </body>
