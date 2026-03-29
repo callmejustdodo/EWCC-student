@@ -8,6 +8,15 @@ import { HeaderWithCart } from "@/components/layout/header-with-cart";
 import { Footer } from "@/components/layout/footer";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    default: "LENS - Premium Eyewear",
+    template: "%s | LENS",
+  },
+  description: "당신의 시선을 완성하는 프리미엄 아이웨어. 미니멀한 디자인, 최상의 착용감.",
+};
 
 const roboto = Roboto({ subsets: ["latin"], variable: "--font-sans" });
 
